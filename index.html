@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows and Linux Codes</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #000;
+            padding: 20px 0;
+            margin: 0;
+            background-color: #e0e0e0;
+            font-size: 2em;
+        }
+
+        
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        
+        .column {
+            width: 45%;
+            padding: 10px;
+        }
+
+        
+        .divider {
+            width: 2px;
+            background-color: #000;
+            margin: 0 10px;
+        }
+
+        
+        .code-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .code-list li {
+            cursor: pointer;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        
+        .linux-code {
+            color: #003366; 
+        }
+
+        .linux-code:hover {
+            background-color: #d0e6ff;
+        }
+
+        .windows-code {
+            color: #0056b3; 
+        }
+
+        .windows-code:hover {
+            background-color: #cce4ff;
+        }
+
+    
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        
+        .close-btn {
+            cursor: pointer;
+            color: #000;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1>Windows and Linux Codes</h1>
+
+
+    <div class="container">
+        
+        <div class="column">
+            <h2>Linux Codes</h2>
+            <ul class="code-list">
+                <li class="linux-code" onclick="showPopup('ls komutu','Dizin içindeki dosya ve klasörleri listeler','images/linux1.png')">Linux Code 1</li>
+                <li class="linux-code" onclick="showPopup('cd komutu','Dizin değiştirmek için kullanılır','images/linux2.png')">Linux Code 2</li>
+                <li class="linux-code" onclick="showPopup('pwd komutu','Bulunduğunuz dizinin tam yolunu gösterir','images/linux3.png')">Linux Code 3</li>
+                <li class="linux-code" onclick="showPopup('mkdir komutu','Yeni bir klasör oluşturur','images/linux4.png')">Linux Code 4</li>   
+                <li class="linux-code" onclick="showPopup('rmdir komutu','Boş bir klasörü siler','images/linux5.png')">Linux Code 5</li>    
+                <li class="linux-code" onclick="showPopup('rm komutu','Dosya veya klasör silmek için kullanılır','images/linux6.png')">Linux Code 6</li>     
+                <li class="linux-code" onclick="showPopup('cp komutu','Dosya veya klasörü kopyalar','images/linux7.png')">Linux Code 7</li>     
+                <li class="linux-code" onclick="showPopup('mv komutu','Dosya klaörü taşır veya yeniden adlandırır','images/linux8.png')">Linux Code 8</li>     
+                <li class="linux-code" onclick="showPopup('touch komutu','Yeni boş bir dosya oluşturur','images/linux9.png')">Linux Code 9</li>    
+                <li class="linux-code" onclick="showPopup('find komutu','Belirli bir dizinde dosya veya klasör arar','images/linux10.png')">Linux Code 10</li>  
+                <li class="linux-code" onclick="showPopup('whoami komutu','Geçerli kullanıcı adını gösterir','images/linux11.png')">Linux Code 11</li>  
+                <li class="linux-code" onclick="showPopup('uname komutu','Sistem bilgilerini görüntüler','images/linux12.png')">Linux Code 12</li>  
+                <li class="linux-code" onclick="showPopup('df komutu','Disk kullanımını gösterir','images/linux13.png')">Linux Code 13</li>  
+                <li class="linux-code" onclick="showPopup('du komutu','Dizin boyutlarını gösterir','images/linux14.png')">Linux Code 14</li>  
+                <li class="linux-code" onclick="showPopup('top komutu','Çalışan işlemleri ve sistem performansını gerçek zamanlı olarak görüntüler','images/linux15.png')">Linux Code 15</li>  
+                <li class="linux-code" onclick="showPopup('ps komutu','Çalışan işlemleri listeler','images/linux16.png')">Linux Code 16</li>  
+                <li class="linux-code" onclick="showPopup('kill komutu','Belirli bir işlem IDsine sahip işlemi sonlandırır','images/linux17.png')">Linux Code 17</li>  
+                <li class="linux-code" onclick="showPopup('uptime komutu','Sistemin ne kadar süredir çalıştığını gösterir','images/linux18.png')">Linux Code 18</li>  
+                <li class="linux-code" onclick="showPopup('free komutu','Ram ve swap kullanımını gösterir','images/linux19.png')">Linux Code 19</li>  
+                <li class="linux-code" onclick="showPopup('history komutu','Daha önce çalıştırılan komutları gösterir','images/linux20.png')">Linux Code 20</li>   
+                <li class="linux-code" onclick="showPopup('netstat komutu','Ağ bağlantılarını ve port durumunu gösterir','images/linux21.png')">Linux Code 21</li>
+                <li class="linux-code" onclick="showPopup('ifconfig komutu','Ağ arayüzlerini ve IP adreslerini gösterir','images/linux22.png')">Linux Code 22</li>
+                <li class="linux-code" onclick="showPopup('sudo komutu','Komutu yönetici olarakmçalıştırır','images/linux23.png')">Linux Code 23</li>
+                <li class="linux-code" onclick="showPopup('chown komutu','Dosya veya klasör sahibini değiştirir','images/linux24.png')">Linux Code 24</li>
+                <li class="linux-code" onclick="showPopup('chmod komutu','Dosya izinlerini değiştirir','images/linux25.png')">Linux Code 25</li>
+            </ul>
+        </div>
+
+        
+        <div class="divider"></div>
+
+        
+        <div class="column">
+            <h2>Windows Codes</h2>
+            <ul class="code-list">
+                <li class="windows-code" onclick="showPopup('dir komutu', 'Geçerli dizindeki bulunduğunuz klasördeki dosya ve klasörlerin listesini gösterir Dosya boyutlarını son değiştirilme tarihlerini ve türlerini görüntülemek için kullanılır','images/Windows1.png')">Windows Code 1</li>
+                <li class="windows-code" onclick="showPopup('cd komutu', 'Belirtilen dizine geçiş yapar Bu komut, klasörler arasında gezinmek için kullanılır','images/Windows2.png')">Windows Code 2</li>
+                <li class="windows-code" onclick="showPopup('cd .. komutu', 'Mevcut dizinin bir üst seviyesine geçiş yapar Dizinden çıkmak için kullanılır','images/windows3.png')">Windows Code 3</li>
+                <li class="windows-code" onclick="showPopup('mkdir komutu', 'Yeni bir klasör oluşturur Proje veya dosyaları organize etmek için kullanılır','images/windows4.png')">Windows Code 4</li>
+                <li class="windows-code" onclick="showPopup('rmdir komutu', 'Boş bir klasörü silmek için kullanılır Dolu klasörleri silmek için ek parametreler gerekir','images/Windows5.png')">Windows Code 5</li>
+                <li class="windows-code" onclick="showPopup('del komutu', 'Belirtilen dosyayı siler','images/Windows6.png')">Windows Code 6</li>
+                <li class="windows-code" onclick="showPopup('copy komutu', 'Bir dosyayı başka bir konuma kopyalar','images/Windows7.png')">Windows Code 7</li>
+                <li class="windows-code" onclick="showPopup('move komutu', 'Dosyayı taşımak için kullanılır Kopyalamaz taşır','images/Windows8.png')">Windows Code 8</li>
+                <li class="windows-code" onclick="showPopup('rename komutu', 'Dosya veya klasör adını değiştirmek için kullanılır','images/Windows9.png')">Windows Code 9</li>
+                <li class="windows-code" onclick="showPopup('cls komutu', 'Komut istemcisindeki ekranı temizler','images/Windows10.png')">Windows Code 10</li>
+                <li class="windows-code" onclick="showPopup('echo komutu', 'Belirtilen metni ekrana yazdırmak için kullanılır','images/windows11.png')">Windows Code 11</li>
+                <li class="windows-code" onclick="showPopup('ipconfig komutu', 'Ağ bağlantı bilgilerini gösterir Ip adresi varsayılan ağ gibi bilgileri gösterir','images/windows12.png')">Windows Code 12</li>
+                <li class="windows-code" onclick="showPopup('systeminfo komutu', 'Bilgisayarın işletim sistemi Ram işlemci gibi bilgileri gösterir','images/Windows13.png')">Windows Code 13</li>
+                <li class="windows-code" onclick="showPopup('tasklist komutu', 'Çalışan tüm işlemleri gösterir','images/Windows14.png')">Windows Code 14</li>
+                <li class="windows-code" onclick="showPopup('taskkill komutu', 'Belirtilen işlemi kapatır','images/Windows15.png')">Windows Code 15</li>
+                <li class="windows-code" onclick="showPopup('powercfg /batteryreport komutu', 'Pil geçmişini ve sağlık durumunu raporlar sadece laptoplar için çalışır','images/Windows16.png')">Windows Code 16</li>
+                <li class="windows-code" onclick="showPopup('chkdsk komutu', 'Sürücüyü hatalar için tarar ve onarım yapar','images/Windows17.png')">Windows Code 17</li>
+                <li class="windows-code" onclick="showPopup('ver komutu', 'Windows sürüm bilgilerini gösterir','images/Windows18.png')">Windows Code 18</li>
+                <li class="windows-code" onclick="showPopup('format komutu', 'Seçilen sürücüyü temizler ve biçimlendirir','images/windows19.png')">Windows Code 19</li>
+                <li class="windows-code" onclick="showPopup('shutdown /s /t komutu', 'Bilgisayarı istenilen sürede kapatmaya yarar','images/windows20.png')">Windows Code 20</li>
+                <li class="windows-code" onclick="showPopup('shutdown /r komutu', 'Bilgisayarı yeniden başlatır','images/windows21.png')">Windows Code 21</li>
+                <li class="windows-code" onclick="showPopup('sfc /scannow komutu', 'Sistem dosyalarını tarar ve bozuk dosyaları onarır','images/Windows22.png')">Windows Code 22</li>
+                <li class="windows-code" onclick="showPopup('netstat komutu', 'Ağ bağlantılarını portları ve aktif bağlantıları listeler','images/Windows23.png')">Windows Code 23</li>
+                <li class="windows-code" onclick="showPopup('diskpart komutu', 'Disk bölümlerini yönetmek için kullanılır','images/Windows24.png')">Windows Code 24</li>
+                <li class="windows-code" onclick="showPopup('attrib komutu', 'Dosya özelliklerini değiştirmek veya görüntülemek için kullanılır','images/windows25.png')">Windows Code 25</li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <div id="popup-content"></div>
+        <div class="close-btn" onclick="closePopup()">Close</div>
+    </div>
+
+    <script>
+        
+        function showPopup(codeTitle, description, imagePath) {
+            document.getElementById('popup-content').innerHTML = `
+                <h2>${codeTitle}</h2>
+                <p>${description}</p>
+                <img src="${imagePath}" alt="${codeTitle} screenshot" width="90%">
+            
+            `;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
